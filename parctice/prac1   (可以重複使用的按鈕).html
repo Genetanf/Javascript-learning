@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .alternate {
+            background-color: lightgreen;
+            color: darkblue;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box" id="contentBox">Hello, World!</div>
+    <button id="afterclick">切換樣式</button>
+
+    <script>
+    function toggleStyle() {
+        var contentBox = document.getElementById('contentBox');
+        
+        // 檢查元素是否已應用了特定樣式，並根據狀態切換樣式
+        if (contentBox.classList.contains('alternate')) {
+            // 如果已應用了 'alternate' 樣式，則切換回原始樣式
+            contentBox.classList.remove('alternate');
+        } else {
+            // 如果未應用 'alternate' 樣式，則切換到 'alternate' 樣式
+            contentBox.classList.add('alternate');
+        }
+    }
+
+    var after=document.getElementById("afterclick");
+    after.addEventListener("click",toggleStyle,false);
+</script>
+</body>
+</html>
